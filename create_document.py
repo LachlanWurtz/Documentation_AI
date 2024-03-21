@@ -1,6 +1,8 @@
 from docxtpl import DocxTemplate
 
-def create_document(template_path, context, folder, name):
+
+
+def create_document(template_data):
     
     """
     Creates '.docx' document in path 'folder', with document name 'name',
@@ -15,8 +17,8 @@ def create_document(template_path, context, folder, name):
     Return: None
     """
         
-    doc = DocxTemplate("my_word_template.docx")
-    context = { 'company_name' : "World company" }
+    doc = DocxTemplate(r"templates\User_manual1.docx")
+    context = template_data
     doc.render(context)
     doc.save("generated_doc.docx")
 
